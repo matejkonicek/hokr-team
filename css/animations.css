@@ -1,0 +1,140 @@
+/* ============================================================
+   HOKR TEAM — animations.css
+   Keyframes, particles, cinematic effects
+   ============================================================ */
+
+/* ── HERO ENTRANCE ───────────────────────────────────────── */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow.animate  { animation: heroReveal 800ms var(--ease-out) 200ms both; }
+.hero-headline.animate { animation: heroReveal 900ms var(--ease-out) 380ms both; }
+.hero-sub.animate      { animation: heroReveal 800ms var(--ease-out) 560ms both; }
+.hero-btns.animate     { animation: heroReveal 800ms var(--ease-out) 720ms both; }
+.scroll-indicator.animate { animation: heroReveal 800ms var(--ease-out) 1000ms both; }
+
+/* ── PARTICLES CANVAS ────────────────────────────────────── */
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* ── GLOW PULSE ──────────────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+
+.glow-pulse {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* ── COUNTER ODOMETER ────────────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.counter-num.counting {
+  animation: countUp 400ms var(--ease-out) both;
+}
+
+/* ── STAGGERED CARD REVEAL ───────────────────────────────── */
+.service-card:nth-child(1) { --stagger: 0ms; }
+.service-card:nth-child(2) { --stagger: 80ms; }
+.service-card:nth-child(3) { --stagger: 160ms; }
+.service-card:nth-child(4) { --stagger: 240ms; }
+.service-card:nth-child(5) { --stagger: 320ms; }
+.service-card:nth-child(6) { --stagger: 400ms; }
+.service-card:nth-child(7) { --stagger: 480ms; }
+.service-card:nth-child(8) { --stagger: 560ms; }
+.service-card:nth-child(9) { --stagger: 640ms; }
+
+.service-card.reveal {
+  transition-delay: var(--stagger, 0ms);
+}
+
+.portfolio-item:nth-child(1) { --stagger: 0ms; }
+.portfolio-item:nth-child(2) { --stagger: 80ms; }
+.portfolio-item:nth-child(3) { --stagger: 160ms; }
+.portfolio-item:nth-child(4) { --stagger: 240ms; }
+.portfolio-item:nth-child(5) { --stagger: 320ms; }
+
+.portfolio-item.reveal {
+  transition-delay: var(--stagger, 0ms);
+}
+
+/* ── SHIMMER LINE ────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--gold-dim) 0%,
+    oklch(85% 0.14 70) 45%,
+    var(--gold-dim) 90%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── AMBIENT BACKGROUND PULSE ────────────────────────────── */
+@keyframes ambientDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.05); }
+  66%  { transform: translate(-15px, 15px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.ambient-drift {
+  animation: ambientDrift 18s ease-in-out infinite;
+}
+
+/* ── NAVBAR ENTRY ────────────────────────────────────────── */
+@keyframes navEntry {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#navbar { animation: navEntry 600ms var(--ease-out) 100ms both; }
+
+/* ── SECTION DIVIDER ─────────────────────────────────────── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-pale), transparent);
+  margin: 0;
+}
+
+/* ── HOVER LIFT ──────────────────────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition: transform 200ms var(--ease-out),
+                box-shadow 200ms var(--ease-out);
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px oklch(7% 0.008 45 / 0.5);
+  }
+}
+
+/* ── LOADING BAR ANIMATION ───────────────────────────────── */
+@keyframes loadPulse {
+  0%, 100% { box-shadow: 0 0 8px var(--gold); }
+  50%       { box-shadow: 0 0 20px var(--gold); }
+}
+
+.loader-bar {
+  animation: loadPulse 1.5s ease-in-out infinite;
+}
