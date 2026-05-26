@@ -156,56 +156,71 @@ function initHeroAnimations() {
 
 /* ── CONTACT FORM ────────────────────────────────────────── */
 (function initForm() {
-  const form    = document.getElementById('contact-form');
+  // Podporuje obě ID — contact-form i contactForm
+  const form    = document.getElementById('contact-form') || document.getElementById('contactForm');
   const success = document.querySelector('.form-success');
   const error   = document.querySelector('.form-error');
+  const msgEl   = document.getElementById('msg');
   if (!form) return;
+
+  function showSuccess(text) {
+    if (success) { success.textContent = text; success.style.display = 'block'; }
+    if (msgEl)   { msgEl.className = 'msg success'; msgEl.textContent = '✓ ' + text; }
+  }
+
+  function showError(text) {
+    if (error) { error.textContent = text; error.style.display = 'block'; }
+    if (msgEl) { msgEl.className = 'msg error'; msgEl.textContent = '✗ ' + text; }
+  }
+
+  function clearMessages() {
+    if (success) success.style.display = 'none';
+    if (error)   error.style.display   = 'none';
+    if (msgEl)   msgEl.className = 'msg';
+  }
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    success.style.display = 'none';
-    error.style.display   = 'none';
+    clearMessages();
 
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
 
-    // Basic validation
-    const required = ['name', 'email', 'message'];
-    const missing = required.filter(k => !data[k]?.trim());
-    if (missing.length) {
-      error.textContent = 'Prosím vyplňte všechna povinná pole.';
-      error.style.display = 'block';
+    // Validace na straně klienta
+    const name    = formData.get('name')?.trim();
+    const email   = formData.get('email')?.trim();
+    const message = formData.get('message')?.trim();
+
+    if (!name || !email || !message) {
+      showError('Prosím vyplňte všechna povinná pole.');
       return;
     }
 
     const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRx.test(data.email)) {
-      error.textContent = 'Zadejte platnou e-mailovou adresu.';
-      error.style.display = 'block';
+    if (!emailRx.test(email)) {
+      showError('Zadejte platnou e-mailovou adresu.');
       return;
     }
 
-    const btn = form.querySelector('[type="submit"]');
+    const btn = form.querySelector('[type="submit"]') || document.getElementById('btn');
     const origText = btn.textContent;
     btn.textContent = 'Odesílám...';
     btn.disabled = true;
 
-    // Simulate async send (replace with fetch to PHP/SMTP endpoint)
-    await new Promise(r => setTimeout(r, 1200));
-
     try {
-      const res = await fetch('/send.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (!res.ok) throw new Error();
-      success.textContent = 'Zpráva odeslána. Ozveme se vám co nejdříve.';
-      success.style.display = 'block';
-      form.reset();
+      // Posíláme jako FormData — send.php čte $_POST
+      const res = await fetch('send.php', { method: 'POST', body: formData });
+      const json = await res.json();
+
+      if (json.success) {
+        showSuccess('Zpráva odeslána. Ozveme se vám co nejdříve!');
+        form.reset();
+      } else {
+        showError(json.error || 'Chyba při odesílání. Zkuste to znovu.');
+      }
     } catch {
-      error.textContent = 'Chyba při odesílání. Zkuste to prosím znovu.';
-      error.style.display = 'block';
+      showError('Chyba při odesílání. Zkuste to prosím znovu.');
     }
+
     btn.textContent = origText;
     btn.disabled = false;
   });
@@ -251,3 +266,4 @@ portfolioItems.forEach(item => {
         video.pause();
     });
 });
+
