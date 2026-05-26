@@ -19,10 +19,7 @@
   --white-soft:   oklch(88% 0.008 60);
 
   /* Brand gold */
-  --gold:         oklch(56.458% 0.22204 27.924);
-  --gold-dim:     oklch(56.458% 0.22204 27.924);
-  --gold-pale:    oklch(56.458% 0.22204 27.924);
-  --gold-glow:    oklch(56.458% 0.22204 27.924);
+  --red:         oklch(56.458% 0.22204 27.924);
 
   /* Typography */
   --font-display: 'Bebas Neue', sans-serif;
@@ -88,7 +85,7 @@ input, textarea, select { font: inherit; }
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 4rem);
   letter-spacing: 0.25em;
-  color: var(--gold);
+  color: var(--red);
 }
 
 .loader-bar-wrap {
@@ -100,7 +97,7 @@ input, textarea, select { font: inherit; }
 
 .loader-bar {
   height: 100%;
-  background: var(--gold);
+  background: var(--red);
   width: 0%;
   transition: width 1.2s var(--ease-in-out);
 }
@@ -188,13 +185,13 @@ body::before {
   position: absolute;
   bottom: 0; left: 0;
   width: 0; height: 1px;
-  background: var(--gold);
+  background: var(--red);
   transition: width 300ms var(--ease-out);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--gold);
+  color: var(--red);
 }
 
 .nav-cta {
@@ -215,7 +212,7 @@ background-color: white; /* Plná bílá výplň */
 }
 
 .nav-cta:hover {
-  background-color: var(--gold);
+  background-color: var(--red);
   transform: translateY(-1px);
 }
 
@@ -281,7 +278,7 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   font-weight: 500;
   margin-bottom: 1rem;
   display: flex;
@@ -294,7 +291,15 @@ section {
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--gold);
+  background: var(--red);
+}
+
+.section-label::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--red);
 }
 
 .section-title {
@@ -316,7 +321,7 @@ section {
 .section-title em {
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--gold);
+  color: var(--red);
   font-size: 1.08em;
 }
 
@@ -341,12 +346,11 @@ section {
 .btn:active { transform: scale(0.97); }
 
 .btn-primary {
-  background: var(--gold);
+  background: var(--red);
   color: var(--black);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 32px oklch(72% 0.12 68 / 0.4);
   transform: translateY(-2px);
 }
 
@@ -355,14 +359,13 @@ section {
   backdrop-filter: blur(20px);
   background-image: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(0,0,0,0.2));
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--gold);
+  color: var(--red);
 }
 
 .btn-outline:hover {
-  border-color: var(--gold);
-  box-shadow: 0 0 20px oklch(72% 0.12 68 / 0.2);
+  border-color: var(--red);
   transform: translateY(-2px);
-  background: oklch(72% 0.12 68 / 0.06);
+  background: transparent;
 }
 
 .btn-ghost {
@@ -442,7 +445,7 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   font-weight: 500;
   margin-bottom: 1.25rem;
   display: flex;
@@ -452,12 +455,6 @@ section {
   transform: translateY(16px);
 }
 
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 28px; height: 1px;
-  background: var(--gold);
-}
 
 .hero-headline {
   font-family: var(--font-display);
@@ -528,7 +525,6 @@ section {
   content: '';
   position: absolute;
   inset: -16px;
-  border: 1px solid oklch(72% 0.12 68 / 0.15);
   border-radius: var(--radius-md);
   z-index: 0;
 }
@@ -592,12 +588,12 @@ section {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 4rem);
   letter-spacing: 0.04em;
-  color: var(--gold);
+  color: var(--red);
   line-height: 1;
 }
 
 .counter-suffix {
-  color: var(--gold-dim);
+  color: var(--red-dim);
 }
 
 .counter-label {
@@ -651,7 +647,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--red);
   opacity: 0;
   transition: opacity 300ms var(--ease-out);
   pointer-events: none;
@@ -669,7 +665,7 @@ section {
   width: 44px;
   height: 44px;
   margin-bottom: 1.5rem;
-  color: var(--gold);
+  color: var(--red);
 }
 
 .service-card h3 {
@@ -681,7 +677,7 @@ section {
   transition: color 200ms var(--ease-out);
 }
 
-.service-card:hover h3 { color: var(--gold); }
+.service-card:hover h3 { color: var(--red); }
 
 .service-card p {
   font-size: 0.85rem;
@@ -773,7 +769,7 @@ section {
   font-size: 0.6rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   margin-bottom: 0.4rem;
 }
 
@@ -838,15 +834,15 @@ section {
   border: none;
 }
 
-.accordion-trigger:hover { color: var(--gold); }
+.accordion-trigger:hover { color: var(--red); }
 
-.accordion-trigger.open { color: var(--gold); }
+.accordion-trigger.open { color: var(--red); }
 
 .accordion-icon {
   width: 20px; height: 20px;
   flex-shrink: 0;
   position: relative;
-  color: var(--gold-dim);
+  color: var(--red-dim);
 }
 
 .accordion-icon::before,
@@ -934,12 +930,12 @@ section {
 
 .contact-detail-icon {
   width: 36px; height: 36px;
-  border: var(--gold);
+  border: var(--red);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+  color: var(--red);
   flex-shrink: 0;
   font-size: 0.75rem;
 }
@@ -960,8 +956,8 @@ section {
 }
 
 .social-link:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--red);
+  color: var(--red);
   background: oklch(72% 0.12 68 / 0.06);
 }
 
@@ -990,7 +986,7 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 0.5rem;
 }
 
@@ -1008,11 +1004,14 @@ section {
   transition: border-color 200ms var(--ease-out),
               box-shadow 200ms var(--ease-out),
               background 200ms var(--ease-out);
-  -webkit-appearance: none;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+  color: var(--white);
 }
 
 .form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a07040' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   padding-right: 2.5rem;
@@ -1024,7 +1023,6 @@ section {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: oklch(72% 0.12 68 / 0.5);
   box-shadow: 0 0 0 3px oklch(72% 0.12 68 / 0.08);
   background: oklch(10% 0.008 45 / 0.8);
 }
@@ -1150,7 +1148,7 @@ footer {
 
 /* ── UTILITY ─────────────────────────────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; }
-.text-gold { color: var(--gold); }
+.text-gold { color: var(--red); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
