@@ -624,19 +624,25 @@ section {
 }
 
 .services-grid {
+    background-image:url('../assets/images/patterns.svg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
+  gap: 1.5rem;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5px;
-  background: oklch(38% 0.01 45 / 0.2);
-  border: 1px solid oklch(38% 0.01 45 / 0.2);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
 
 .service-card {
-  background: var(--black-card);
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(0,0,0,0.2));
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Jemné ohraničení */
+  border-radius: var(--radius-md);
   padding: 2.5rem 2rem;
   position: relative;
   overflow: hidden;
@@ -654,7 +660,9 @@ section {
 }
 
 .service-card:hover {
-  background: oklch(15% 0.01 45);
+    background-color: transparent;
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(120deg, rgba(118, 117, 117, 0.3), rgba(0, 0, 0, 0.3));
 }
 
 .service-card:hover::after {
@@ -814,8 +822,19 @@ section {
 }
 
 .accordion-item {
-  border-bottom: 1px solid oklch(38% 0.01 45 / 0.3);
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(0,0,0,0.2));
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Jemné ohraničení */
+  border-radius: var(--radius-md);
+  padding: 0% 1.5rem;
   overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.accordion-item:has(.accordion-trigger.open) {
+  background-color: var(--black-glass);
+  background-image: none; 
 }
 
 .accordion-trigger {
@@ -836,13 +855,20 @@ section {
 
 .accordion-trigger:hover { color: var(--red); }
 
-.accordion-trigger.open { color: var(--red); }
+.accordion-trigger.open { color: var(--red);}
 
 .accordion-icon {
-  width: 20px; height: 20px;
+  width: 30px; height: 30px;
   flex-shrink: 0;
   position: relative;
   color: var(--red-dim);
+  background: rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px); 
+  border-radius: 50%;
+  transition: all 300ms var(--ease-out);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .accordion-icon::before,
