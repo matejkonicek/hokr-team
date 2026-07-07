@@ -32,6 +32,39 @@ document.addEventListener('DOMContentLoaded', initHeroAnimations);
   }, { threshold: 0.4 });
 
   sections.forEach(s => obs.observe(s));
+
+  // Mobilní hamburger menu
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('nav-menu');
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    toggle.classList.remove('open');
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-lock');
+  }
+
+  function openMenu() {
+    toggle.classList.add('open');
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-lock');
+  }
+
+  toggle.addEventListener('click', () => {
+    if (menu.classList.contains('open')) closeMenu(); else openMenu();
+  });
+
+  // Zavřít menu po kliknutí na odkaz
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Zavřít menu při zvětšení okna zpět na desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
 })();
 
 /* ── SCROLL REVEAL ───────────────────────────────────────── */
@@ -108,66 +141,76 @@ document.addEventListener('DOMContentLoaded', initHeroAnimations);
   });
 })();
 
-/* ── CONTACT FORM ────────────────────────────────────────── */
-(function initForm() {
-  const form    = document.getElementById('contact-form');
-  const success = document.querySelector('.form-success');
-  const error   = document.querySelector('.form-error');
-  if (!form) return;
+/* ── FORMULÁŘE (kontakt + přidejte se k nám) ─────────────── */
+(function initForms() {
+  // Podporuje libovolný počet formulářů se třídou .contact-form
+  // (kontaktní formulář i formulář „Přidejte se k nám“ fungují stejně).
+  document.querySelectorAll('.contact-form').forEach(form => {
+    const success = form.querySelector('.form-success');
+    const error   = form.querySelector('.form-error');
 
-  function showSuccess(text) {
-    if (success) { success.textContent = text; success.style.display = 'block'; }
-  }
-
-  function showError(text) {
-    if (error) { error.textContent = text; error.style.display = 'block'; }
-  }
-
-  function clearMessages() {
-    if (success) success.style.display = 'none';
-    if (error)   error.style.display   = 'none';
-  }
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    clearMessages();
-
-    const formData = new FormData(form);
-    const name     = formData.get('name')?.trim();
-    const email    = formData.get('email')?.trim();
-    const message  = formData.get('message')?.trim();
-
-    if (!name || !email || !message) {
-      showError('Prosím vyplňte všechna povinná pole.');
-      return;
+    function showSuccess(text) {
+      if (success) { success.textContent = text; success.style.display = 'block'; }
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showError('Zadejte platnou e-mailovou adresu.');
-      return;
+    function showError(text) {
+      if (error) { error.textContent = text; error.style.display = 'block'; }
     }
 
-    const btn = form.querySelector('[type="submit"]');
-    const origText = btn.textContent;
-    btn.textContent = 'Odesílám…';
-    btn.disabled = true;
+    function clearMessages() {
+      if (success) success.style.display = 'none';
+      if (error)   error.style.display   = 'none';
+    }
 
-    try {
-      const res  = await fetch('send.php', { method: 'POST', body: formData });
-      const json = await res.json();
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      clearMessages();
 
-      if (json.success) {
-        showSuccess('Zpráva odeslána. Ozveme se vám co nejdříve!');
-        form.reset();
-      } else {
-        showError(json.error || 'Chyba při odesílání. Zkuste to znovu.');
+      const formData = new FormData(form);
+      const name    = formData.get('name')?.trim();
+      const email   = formData.get('email')?.trim();
+      const phone   = formData.get('phone')?.trim();
+      let   message = formData.get('message')?.trim();
+
+      // Formulář „Přidejte se k nám“ nemá pole zprávy — dovolíme
+      // odeslání, pokud je vyplněný alespoň telefon, a zprávu doplníme sami.
+      if (!name || !email || (!message && !phone)) {
+        showError('Prosím vyplňte všechna povinná pole.');
+        return;
       }
-    } catch {
-      showError('Chyba při odesílání. Zkuste to prosím znovu.');
-    }
 
-    btn.textContent = origText;
-    btn.disabled = false;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('Zadejte platnou e-mailovou adresu.');
+        return;
+      }
+
+      if (!message) {
+        message = 'Mám zájem přidat se k týmu Hokr Team.';
+        formData.set('message', message);
+      }
+
+      const btn = form.querySelector('[type="submit"]');
+      const origText = btn.textContent;
+      btn.textContent = 'Odesílám…';
+      btn.disabled = true;
+
+      try {
+        const res  = await fetch('send.php', { method: 'POST', body: formData });
+        const json = await res.json();
+
+        if (json.success) {
+          showSuccess('Zpráva odeslána. Ozveme se vám co nejdříve!');
+          form.reset();
+        } else {
+          showError(json.error || 'Chyba při odesílání. Zkuste to znovu.');
+        }
+      } catch {
+        showError('Chyba při odesílání. Zkuste to prosím znovu.');
+      }
+
+      btn.textContent = origText;
+      btn.disabled = false;
+    });
   });
 })();
 
@@ -189,19 +232,5 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
-});
-
-/* ── PORTFOLIO VIDEO hover ───────────────────────────────── */
-document.querySelectorAll('.portfolio-item').forEach(item => {
-  const video = item.querySelector('video');
-  if (!video) return;
-
-  item.addEventListener('mouseenter', () => {
-    video.play().catch(() => {});
-  });
-
-  item.addEventListener('mouseleave', () => {
-    video.pause();
   });
 });

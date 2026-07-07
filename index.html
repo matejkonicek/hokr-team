@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hokr Team — profesionální security a event management. Zajišťujeme bezpečnost sportovních utkání, VIP eventů, koncertů a společenských akcí po celé České republice." />
-  <meta name="keywords" content="security eventy, ostraha akcí, VIP ochrana, event management, technická produkce, Praha, Česká republika" />
-  <meta property="og:title" content="Hokr Team — Security &amp; Event Management" />
-  <meta property="og:description" content="Profesionální security a technické zajištění akcí." />
+  <meta name="description" content="Hokr Team — profesionální bednáci a stage crew pro koncerty, festivaly a firemní akce. Stavba a demontáž pódií, nakládka a vykládka techniky, rigging a technická produkce po celé České republice." />
+  <meta name="keywords" content="bednáci, bednák, stage crew, stavba pódií, demontáž pódia, nakládka techniky, vykládka techniky, rigging, festivalová crew, koncertní crew, technická produkce, roadie, Praha, Česká republika" />
+  <meta property="og:title" content="Hokr Team — Bednáci &amp; Stage Crew" />
+  <meta property="og:description" content="Profesionální bednáci pro stavbu pódií a technické zajištění akcí." />
   <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
-  <title>Hokr Team — zprostředkovatel služeb pro společenské akce</title>
+  <title>Hokr Team — bednáci a stage crew pro koncerty a festivaly</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,10 +27,15 @@
 <nav id="navbar" role="navigation" aria-label="Hlavní navigace">
   <a href="#hero"><img class="nav-logo" src="assets/images/logo.png" alt="logo" /></a>
 
-  <ul class="nav-menu" role="list">
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-menu" id="nav-menu" role="list">
     <li><a href="#hero"      class="nav-link" data-section="hero">Domů</a></li>
     <li><a href="#about"     class="nav-link" data-section="about">O nás</a></li>
-    <li><a href="#services"  class="nav-link" data-section="services">Služby</a></li>
+    <li><a href="#join"      class="nav-link" data-section="join">Přidejte se</a></li>
+    <li><a href="#services"  class="nav-link" data-section="services">Služby bednáků</a></li>
     <li><a href="#reference" class="nav-link" data-section="reference">Reference</a></li>
     <li><a href="#faq"       class="nav-link" data-section="faq">FAQ</a></li>
     <li><a href="#contact"   class="nav-cta">Kontakt</a></li>
@@ -74,22 +79,23 @@
   <div class="hero-glow glow-pulse"></div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow animate">Security &amp; Event Management</div>
+    <div class="hero-eyebrow animate">Bednáci &amp; Stage Crew</div>
 
     <h1 class="hero-headline animate">
-      zprostředkovatel<br/>
-      služeb pro<br/>
-      společenské akce
+      profesionální<br/>
+      bednáci pro<br/>
+      vaši akci
     </h1>
 
     <p class="hero-sub animate">
-      Zajišťujeme bezpečnost sportovních utkání, VIP eventů,
-      koncertů a společenských akcí po celé České republice.
+      Zajišťujeme stavbu a demontáž pódií, nakládku a vykládku techniky,
+      rigging a kompletní stage crew pro koncerty, festivaly a firemní akce
+      po celé České republice.
     </p>
 
     <div class="hero-btns animate">
       <a href="#services" class="btn btn-primary">
-        Naše služby
+        Služby bednáků
         <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
       <a href="#reference" class="btn btn-ghost">Reference</a>
@@ -108,18 +114,19 @@
     <div class="about-text">
       <div class="section-label reveal">O společnosti</div>
       <h2 class="section-title-b reveal reveal-delay-1">
-        Tým, na který<br/>
+        Crew, na kterou<br/>
         se <em>spoléháte</em>
       </h2>
       <p class="about-body reveal reveal-delay-2">
-        Hokr team je česká bezpečnostní a eventová agentura s letitými zkušenostmi
-        v oblasti fyzické ostrahy, VIP protokolu a komplexní technické produkce.
-        Naši certifikovaní pracovníci působili na stovkách akcí od ligových sportovních
-        utkání po státní a korporátní recepce.
+        Hokr team je česká četa zkušených bednáků a stage crew s letitou praxí
+        ve stavbě pódií, riggingu, load-in/load-out logistice a komplexní
+        technické produkci. Naši bednáci pracovali na stovkách akcí od ligových
+        sportovních utkání po hudební festivaly a korporátní eventy.
       </p>
       <p class="about-body reveal reveal-delay-2">
-        Kombinujeme precizní bezpečnostní protokoly s produkčním know-how tak,
-        aby každá akce proběhla hladce, bezpečně a se světovou úrovní servisu.
+        Kombinujeme fyzickou zdatnost a technickou zručnost s produkčním
+        know-how tak, aby stavba i demontáž pódia proběhla rychle, bezpečně
+        a přesně podle harmonogramu.
       </p>
       <a href="#contact" class="btn btn-outline reveal reveal-delay-3">
         Začít spolupráci
@@ -129,8 +136,8 @@
 
     <div class="about-image-wrap reveal reveal-delay-2">
       <div class="about-glow" aria-hidden="true"></div>
-      <div class="about-placeholder" role="img" aria-label="Hokr team security operátoři">
-        <img src="assets/images/security.jpg" alt="Hokr team security operátoři" />
+      <div class="about-placeholder" role="img" aria-label="Hokr team bednáci při stavbě pódia">
+        <img src="assets/images/stage.jpg" alt="Hokr team bednáci při stavbě pódia" />
       </div>
     </div>
   </div>
@@ -138,21 +145,75 @@
   <!-- Counters -->
   <div class="counters">
     <div class="counter-item reveal">
-      <div class="counter-num" data-count="500" data-suffix="+">0+</div>
+      <div class="counter-num" data-count="000" data-suffix="+">0+</div>
       <div class="counter-label">Zajištěných akcí</div>
     </div>
     <div class="counter-item reveal reveal-delay-1">
-      <div class="counter-num" data-count="200" data-suffix="+">0+</div>
+      <div class="counter-num" data-count="000" data-suffix="+">0+</div>
       <div class="counter-label">Spokojených klientů</div>
     </div>
     <div class="counter-item reveal reveal-delay-2">
-      <div class="counter-num" data-count="120" data-suffix="+">0+</div>
-      <div class="counter-label">Security pracovníků</div>
+      <div class="counter-num" data-count="000" data-suffix="+">0+</div>
+      <div class="counter-label">Bednáků v týmu</div>
     </div>
     <div class="counter-item reveal reveal-delay-3">
-      <div class="counter-num" data-count="12" data-suffix="">0</div>
+      <div class="counter-num" data-count="10" data-suffix="">0</div>
       <div class="counter-label">Let zkušeností</div>
     </div>
+  </div>
+</section>
+
+<div class="section-divider" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     JOIN US
+     ═══════════════════════════════════════════════════════ -->
+<section id="join">
+  <div class="contact-grid container">
+
+    <div class="contact-info">
+      <div class="section-label reveal">Staňte se součástí týmu</div>
+      <h2 class="reveal reveal-delay-1" style="color:var(--red);font-family:var(--font-serif);font-style:italic;font-size:3.08em;">
+        Přidejte se<br/>
+        k nám
+      </h2>
+      <p class="reveal reveal-delay-2" style="color:var(--black);font-size:0.92rem;line-height:1.85;margin-bottom:2.5rem;">
+        Hledáme šikovné a spolehlivé bednáky do našeho týmu. Necháte nám na
+        sebe kontakt a my se vám co nejdříve ozveme.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <div class="reveal reveal-delay-2">
+      <form class="contact-form" id="join-form" novalidate>
+        <input type="hidden" name="subject" value="Přidejte se k nám – nový zájemce" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="join-name">Jméno a příjmení *</label>
+            <input type="text" id="join-name" name="name" placeholder="Jan Novák" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="join-email">E-mail *</label>
+            <input type="email" id="join-email" name="email" placeholder="jan@firma.cz" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="join-phone">Telefon *</label>
+          <input type="tel" id="join-phone" name="phone" placeholder="+420 …" required autocomplete="tel" />
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          Odeslat žádost
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+
+        <div class="form-success" role="alert"></div>
+        <div class="form-error"   role="alert"></div>
+      </form>
+    </div>
+
   </div>
 </section>
 
@@ -166,12 +227,12 @@
     <div>
       <div class="section-label reveal">Co nabízíme</div>
       <h2 class="section-title reveal reveal-delay-1">
-        Komplexní<br/><em>služby</em>
+        Služby<br/><em>bednáků</em>
       </h2>
     </div>
     <p class="reveal reveal-delay-2" style="max-width:320px;color:var(--white);font-size:0.9rem;line-height:1.8;">
-      Pokrýváme vše od fyzické ostrahy přes technickou produkci
-      až po kompletní event management.
+      Pokrýváme vše od stavby pódií přes nakládku a vykládku techniky
+      až po kompletní stage a event produkci.
     </p>
   </div>
 
@@ -183,8 +244,8 @@
         <path d="M22 4 L38 12 L38 28 Q22 40 22 40 Q22 40 6 28 L6 12 Z"/>
         <path d="M15 22 L20 27 L30 17"/>
       </svg>
-      <h3>Security eventů</h3>
-      <p>Komplexní fyzická ostraha kulturních, sportovních a korporátních akcí. Koordinace přístupů, kontrola vstupu a zvládání nestandardních situací.</p>
+      <h3>Stavba a demontáž pódií</h3>
+      <p>Rychlá a přesná stavba pódií pro koncerty, festivaly i korporátní akce. Zkušení bednáci zvládnou stavbu i demontáž podle přísného harmonogramu.</p>
     </div>
 
     <div class="service-card reveal reveal-delay-1">
@@ -195,8 +256,8 @@
         <path d="M10 10 L14 14"/>
         <path d="M34 10 L30 14"/>
       </svg>
-      <h3>Ostraha sportovních utkání</h3>
-      <p>Specializovaný tým pro fotbalové, hokejové a basketbalové zápasy. Stewarding, sektorové hlídkování a reakce na incidenty fanoušků.</p>
+      <h3>Nakládka a vykládka techniky</h3>
+      <p>Load-in a load-out ozvučovací, osvětlovací a pódiové techniky. Bednáci s praxí u kamionů, kolejnic i backline vybavení pro rychlý obrat.</p>
     </div>
 
     <div class="service-card reveal reveal-delay-2">
@@ -204,8 +265,8 @@
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
         <path d="M22 8 L26 16 L35 17 L29 23 L31 32 L22 28 L13 32 L15 23 L9 17 L18 16 Z"/>
       </svg>
-      <h3>VIP ochrana</h3>
-      <p>Diskrétní a profesionální osobní ochrana pro VIP hosty, celebrity a firemní delegace. Advance planning, trasové průzkumy a protokol.</p>
+      <h3>Rigging a závěsová technika</h3>
+      <p>Zavěšování ozvučení, světel a truss konstrukcí. Bednáci proškolení v riggingu spolupracují přímo s technickým a produkčním týmem.</p>
     </div>
 
     <div class="service-card reveal">
@@ -215,8 +276,8 @@
         <path d="M15 16 L15 10 Q22 6 29 10 L29 16"/>
         <circle cx="22" cy="26" r="3"/>
       </svg>
-      <h3>Kontrola vstupů</h3>
-      <p>Efektivní a přátelský vstupní management. Akreditační systémy, turnikety, kapacitní limity a evidence návštěvnosti v reálném čase.</p>
+      <h3>Backline a instrumenty</h3>
+      <p>Šetrná manipulace s backline vybavením, nástroji a citlivou technikou účinkujících. Přesun, umístění a kontrola na pódiu i mimo něj.</p>
     </div>
 
     <div class="service-card reveal reveal-delay-1">
@@ -228,8 +289,8 @@
         <path d="M26 28 L26 34"/>
         <circle cx="22" cy="20" r="4"/>
       </svg>
-      <h3>Produkční management</h3>
-      <p>Celostní řízení akce od konceptu po realizaci. Harmonogramy, koordinace dodavatelů, stage management a krizový plán.</p>
+      <h3>Stage management</h3>
+      <p>Koordinace pódia od stavby po vystoupení. Harmonogramy přestaveb, komunikace s kapelami a technickým týmem a řízení stage crew na místě.</p>
     </div>
 
     <div class="service-card reveal reveal-delay-2">
@@ -240,8 +301,8 @@
         <path d="M14 38 L18 30"/>
         <path d="M30 38 L26 30"/>
       </svg>
-      <h3>Ozvučení a osvětlení</h3>
-      <p>Profesionální audio-vizuální technika pro živé produkce. Návrh zvukového systému, světelný design a operátorský tým na místě.</p>
+      <h3>Instalace ozvučení a osvětlení</h3>
+      <p>Sestavení a zapojení zvukového a světelného systému na pódiu. Bednáci asistují technikům při stavbě aparátů i kabeláže.</p>
     </div>
 
     <div class="service-card reveal">
@@ -254,7 +315,7 @@
         <path d="M22 28 L22 34"/>
       </svg>
       <h3>Technické zajištění akcí</h3>
-      <p>Infrastruktura pro venkovní i halové akce. Generátory, pódia, oplocení, přenosné toalety a kompletní site management.</p>
+      <p>Kompletní site infrastruktura pro venkovní i halové akce — pódia, oplocení, zázemí crew a logistika techniky na místě.</p>
     </div>
 
     <div class="service-card reveal reveal-delay-1">
@@ -266,8 +327,8 @@
         <line x1="16" y1="20" x2="22" y2="22"/>
         <line x1="28" y1="20" x2="22" y2="22"/>
       </svg>
-      <h3>Koordinace personálu</h3>
-      <p>Plánování, briefing a operativní řízení stovek pracovníků. Komunikační systémy, sektorizace a real-time dispečink.</p>
+      <h3>Koordinace crew</h3>
+      <p>Plánování směn a operativní řízení desítek bednáků. Sektorizace úkolů, komunikace mezi směnami a dispečink v reálném čase.</p>
     </div>
 
     <div class="service-card reveal reveal-delay-2">
@@ -277,8 +338,8 @@
         <path d="M22 14 L22 26"/>
         <circle cx="22" cy="30" r="2" fill="currentColor"/>
       </svg>
-      <h3>Event produkce</h3>
-      <p>Kompletní realizace společenských akcí, gal, tiskových konferencí a korporátních večírků. Od scénáře po finální cleanup.</p>
+      <h3>Festivalová a koncertní produkce</h3>
+      <p>Kompletní stage crew pro festivaly, koncerty a firemní eventy. Od stavby scény po finální strike a odvoz techniky.</p>
     </div>
 
   </div>
@@ -300,35 +361,29 @@
   <div class="portfolio-grid container">
 
     <div class="portfolio-item reveal reveal-delay-1">
-      <video muted loop playsinline preload="metadata">
-        <source src="assets/videos/extraliga.mp4" type="video/mp4" />
-      </video>
+      <img src="assets/images/security.jpg" alt="Hokejové utkání Extraliga" />
       <div class="portfolio-overlay">
         <div class="portfolio-tag">Sportovní utkání</div>
         <div class="portfolio-title">Extraliga hokeje</div>
-        <div class="portfolio-desc">Krizový management při hokejových zápasech nejvyšší ligy.</div>
+        <div class="portfolio-desc">Stavba a demontáž reklamních ploch a technického zázemí při zápasech nejvyšší hokejové ligy.</div>
       </div>
     </div>
 
     <div class="portfolio-item reveal reveal-delay-2">
-      <video muted loop playsinline preload="metadata">
-        <source src="assets/videos/majales.mp4" type="video/mp4" />
-      </video>
+      <img src="assets/images/security.jpg" alt="Hokejové utkání Extraliga" />
       <div class="portfolio-overlay">
-        <div class="portfolio-tag">VIP Event</div>
+        <div class="portfolio-tag">Festival</div>
         <div class="portfolio-title">Majáles</div>
-        <div class="portfolio-desc">Diskrétní osobní ochrana zahraničních delegátů a kompletní protokolové zajištění.</div>
+        <div class="portfolio-desc">Stavba hlavního pódia, load-in techniky a stage crew po celou dobu festivalu.</div>
       </div>
     </div>
 
     <div class="portfolio-item reveal reveal-delay-3">
-      <video muted loop playsinline preload="metadata">
-        <source src="assets/videos/chanceliga.mp4" type="video/mp4" />
-      </video>
+     <img src="assets/images/security.jpg" alt="Hokejové utkání Extraliga" />
       <div class="portfolio-overlay">
         <div class="portfolio-tag">Sportovní utkání</div>
         <div class="portfolio-title">Chance liga</div>
-        <div class="portfolio-desc">Krizový management při fotbalových zápasech nejvyšší ligy.</div>
+        <div class="portfolio-desc">Technické zajištění a nakládka reklamní techniky při zápasech nejvyšší fotbalové ligy.</div>
       </div>
     </div>
 
@@ -349,21 +404,21 @@
 
     <div class="accordion-item reveal">
       <button class="accordion-trigger" aria-expanded="false">
-        Jak probíhá spolupráce?
+        Jak probíhá spolupráce s bednáky?
         <div class="accordion-icon" aria-hidden="true"></div>
       </button>
       <div class="accordion-body">
-        <p>Po prvotní poptávce provedeme bezplatnou konzultaci, při které zmapujeme vaše potřeby, typ akce, lokalitu a termín. Následně připravíme detailní bezpečnostní plán a produkční harmonogram. Po schválení uzavřeme smlouvu a přistoupíme k realizaci.</p>
+        <p>Po prvotní poptávce provedeme bezplatnou konzultaci, při které zmapujeme rozsah pódia, typ techniky, lokalitu a termín stavby i demontáže. Následně připravíme detailní harmonogram stage crew. Po schválení uzavřeme smlouvu a přistoupíme k realizaci.</p>
       </div>
     </div>
 
     <div class="accordion-item reveal">
       <button class="accordion-trigger" aria-expanded="false">
-        Jak rychle lze zajistit security tým?
+        Jak rychle lze zajistit tým bednáků?
         <div class="accordion-icon" aria-hidden="true"></div>
       </button>
       <div class="accordion-body">
-        <p>U menších akcí jsme schopni zajistit tým i do 48 hodin. Pro větší projekty doporučujeme alespoň 2–4 týdny předstihu, aby bylo dostatek času na briefing, recce a přípravu bezpečnostního plánu. V urgentních případech nás kontaktujte telefonicky.</p>
+        <p>U menších akcí jsme schopni zajistit crew i do 48 hodin. Pro větší stavby pódií doporučujeme alespoň 2–4 týdny předstihu, aby bylo dostatek času na briefing, recce lokace a přípravu harmonogramu load-in/load-out. V urgentních případech nás kontaktujte telefonicky.</p>
       </div>
     </div>
 
@@ -373,17 +428,17 @@
         <div class="accordion-icon" aria-hidden="true"></div>
       </button>
       <div class="accordion-body">
-        <p>Ano, působíme na celém území České republiky. Základnu máme v Praze, ale pravidelně zajišťujeme akce v Brně, Ostravě, Plzni i dalších regionech. Při zahraničních akcích jsme připraveni se domluvit individuálně.</p>
+        <p>Ano, působíme na celém území České republiky. Základnu máme v Hradci Králové, ale pravidelně zajišťujeme stavby pódií a stage crew v Praze, Brně, Ostravě, Plzni i dalších regionech. Při zahraničních akcích jsme připraveni se domluvit individuálně.</p>
       </div>
     </div>
 
     <div class="accordion-item reveal">
       <button class="accordion-trigger" aria-expanded="false">
-        Zajišťujete i technickou produkci?
+        Zajišťujete i rigging a instalaci ozvučení?
         <div class="accordion-icon" aria-hidden="true"></div>
       </button>
       <div class="accordion-body">
-        <p>Ano. Vedle security zajišťujeme kompletní technickou produkci: ozvučení, světelný design, video projekce, pódium, staging a site infrastrukturu. Výhodou je jediný kontakt pro bezpečnost i produkci, což zjednodušuje koordinaci a šetří čas.</p>
+        <p>Ano. Vedle stavby pódií zajišťují naši bednáci i rigging, zavěšování truss konstrukcí a asistenci při instalaci ozvučení a osvětlení. Výhodou je jediný kontakt pro stavbu i technickou asistenci, což zjednodušuje koordinaci a šetří čas.</p>
       </div>
     </div>
 
@@ -393,7 +448,7 @@
         <div class="accordion-icon" aria-hidden="true"></div>
       </button>
       <div class="accordion-body">
-        <p>Cena se vždy stanovuje individuálně na základě rozsahu akce, počtu pracovníků, termínu, lokality a požadovaných služeb. Po konzultaci připravíme přehlednou cenovou nabídku bez skrytých poplatků. Nezávaznou poptávku odešlete přes kontaktní formulář níže.</p>
+        <p>Cena se vždy stanovuje individuálně na základě rozsahu pódia, počtu bednáků, délky směny, termínu, lokality a požadovaných služeb. Po konzultaci připravíme přehlednou cenovou nabídku bez skrytých poplatků. Nezávaznou poptávku odešlete přes kontaktní formulář níže.</p>
       </div>
     </div>
 
@@ -415,8 +470,8 @@
         spolupracovat
       </h2>
       <p class="reveal reveal-delay-2" style="color:var(--black);font-size:0.92rem;line-height:1.85;margin-bottom:2.5rem;">
-        Máte zájem o naše služby nebo chcete získat nezávaznou cenovou nabídku?
-        Ozvěte se nám a my se vám ozveme.
+        Potřebujete bednáky na stavbu pódia nebo chcete získat nezávaznou
+        cenovou nabídku? Ozvěte se nám a my se vám ozveme.
       </p>
 
       <div class="contact-details reveal reveal-delay-2">
@@ -440,7 +495,7 @@
       </div>
 
       <div class="map-wrap reveal reveal-delay-3">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81702.04665294841!2d15.758575433325843!3d50.21368931280276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b3eab397049%3A0x3665cf363be33a52!2zSHJhZGVjIEtyw6Fsb3bDqQ!5e0!3m2!1scs!2scz!4v1778425762029!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hokr Team — mapa"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2638492.9578341125!2d12.835448014072764!3d49.773778673200766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948fd7dd8243%3A0xf8661c75d3db586f!2zxIxlc2tv!5e0!3m2!1scs!2scz!4v1783453625461!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
 
@@ -467,11 +522,12 @@
             <label for="event-type">Typ akce</label>
             <select id="event-type" name="event_type">
               <option value="" disabled selected>Vyberte typ</option>
-              <option>Sportovní utkání</option>
+              <option>Stavba pódia</option>
               <option>Hudební festival / koncert</option>
-              <option>VIP / korporátní akce</option>
-              <option>Gala / společenská akce</option>
-              <option>Technická produkce</option>
+              <option>Nakládka / vykládka techniky</option>
+              <option>Rigging</option>
+              <option>Sportovní utkání</option>
+              <option>Firemní / společenská akce</option>
               <option>Jiné</option>
             </select>
           </div>
@@ -479,7 +535,7 @@
 
         <div class="form-group">
           <label for="message">Zpráva *</label>
-          <textarea id="message" name="message" placeholder="Popište stručně vaši akci, termín a lokalitu…" required></textarea>
+          <textarea id="message" name="message" placeholder="Popište stručně velikost pódia, termín a lokalitu…" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary form-submit">
@@ -503,7 +559,7 @@
     <div class="footer-logo">HOKR TEAM</div>
 
     <p class="footer-copy">
-      &copy; 2026 Hokr Team s.r.o. — Security &amp; Event Management
+      &copy; 2026 Hokr Team s.r.o. — Bednáci &amp; Stage Crew
     </p>
 
     <div class="socials">

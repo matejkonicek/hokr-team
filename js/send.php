@@ -33,6 +33,7 @@ $_SESSION['sends'][] = $now;
 // Sanitace vstupů
 $jmeno   = htmlspecialchars(trim($_POST['name']    ?? ''), ENT_QUOTES, 'UTF-8');
 $email   = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+$telefon = htmlspecialchars(trim($_POST['phone']   ?? ''), ENT_QUOTES, 'UTF-8');
 $subject = htmlspecialchars(trim($_POST['subject'] ?? ''), ENT_QUOTES, 'UTF-8');
 $zprava  = htmlspecialchars(trim($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8');
 
@@ -62,6 +63,9 @@ $telo  = "Nová zpráva z kontaktního formuláře\n";
 $telo .= str_repeat('─', 40) . "\n\n";
 $telo .= "Jméno:    $jmeno\n";
 $telo .= "E-mail:   $email\n";
+if ($telefon) {
+    $telo .= "Telefon:  $telefon\n";
+}
 $telo .= "Předmět:  $subject\n\n";
 $telo .= "Zpráva:\n$zprava\n\n";
 $telo .= str_repeat('─', 40) . "\n";
