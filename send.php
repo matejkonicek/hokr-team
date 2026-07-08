@@ -2,7 +2,7 @@
 header('Content-Type: application/json; charset=UTF-8');
 
 // ── Nastavení ──────────────────────────────────────────────
-$prijemce = 'konicek.matej@seznam.cz';
+$prijemce = 'david.hokrteam@seznam.cz';
 $predmet  = 'Nová zpráva z webu';
 // ──────────────────────────────────────────────────────────
 
@@ -70,7 +70,6 @@ $telo .= "Předmět:  $subject\n\n";
 $telo .= "Zpráva:\n$zprava\n\n";
 $telo .= str_repeat('─', 40) . "\n";
 $telo .= "Odesláno: " . date('d.m.Y H:i:s') . "\n";
-$telo .= "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'neznámá') . "\n";
 
 $plnyPredmet = $predmet . ($subject !== '(bez předmětu)' ? ': ' . $subject : '');
 

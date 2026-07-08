@@ -213,7 +213,7 @@ section { position: relative; z-index: 2; }
   font-size: clamp(2.5rem, 5vw, 5rem);
   letter-spacing: 0.06em;
   line-height: 1.05;
-  color: var(--white);
+  color: var(--black);
 }
 
 .section-title em {
@@ -448,11 +448,12 @@ section { position: relative; z-index: 2; }
 #counters-section {
   background: #E8EBE4;
   padding: var(--sp-lg) 3rem;
+  padding-bottom: var(--sp-xs);
 }
 
 .counters {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -483,7 +484,7 @@ section { position: relative; z-index: 2; }
 
 /* ── SERVICES ────────────────────────────────────────────── */
 #services {
-  padding: var(--sp-xl) 3rem;
+  padding: var(--sp-lg) 3rem;
   background: var(--black);
 }
 
