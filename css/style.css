@@ -213,7 +213,7 @@ section { position: relative; z-index: 2; }
   font-size: clamp(2.5rem, 5vw, 5rem);
   letter-spacing: 0.06em;
   line-height: 1.05;
-  color: black;
+  color: var(--white);
 }
 
 .section-title em {
@@ -384,7 +384,7 @@ section { position: relative; z-index: 2; }
 /* ── ABOUT ───────────────────────────────────────────────── */
 #about {
   padding: var(--sp-xl) 3rem;
-  background: #E8EBE4;
+  background: var(--black);
 }
 
 .about-grid {
@@ -399,7 +399,7 @@ section { position: relative; z-index: 2; }
 .about-text .section-title { margin-bottom: 1.5rem; }
 
 .about-body {
-  color: black;
+  color: var(--white-soft);
   line-height: 1.85;
   margin-bottom: 2rem;
   font-size: 0.95rem;
@@ -444,27 +444,26 @@ section { position: relative; z-index: 2; }
   z-index: 0;
 }
 
-/* Counters */
+/* ── COUNTERS SECTION ────────────────────────────────────── */
+#counters-section {
+  background: #E8EBE4;
+  padding: var(--sp-lg) 3rem;
+}
+
 .counters {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid oklch(38% 0.01 45 / 0.4);
-  padding-top: 3rem;
-  margin-top: 5rem;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .counter-item {
   text-align: center;
   padding: 1.5rem 2rem;
-  border-right: 1px solid oklch(38% 0.01 45 / 0.25);
   transition: background 300ms var(--ease-out);
 }
 
-.counter-item:last-child { border-right: none; }
-.counter-item:hover { background: oklch(72% 0.12 68 / 0.03); }
+.counter-item:hover { background: oklch(72% 0.12 68 / 0.05); }
 
 .counter-num {
   font-family: var(--font-display);
@@ -500,7 +499,7 @@ section { position: relative; z-index: 2; }
 .services-header .section-title { max-width: 500px; }
 
 .services-grid {
-  background-image: url('../assets/images/patterns.svg');
+  background-image: url('../assets/images/pattern.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1088,9 +1087,6 @@ footer {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 
   .counters { grid-template-columns: repeat(2, 1fr); }
-  .counter-item:nth-child(2) { border-right: none; }
-  .counter-item:nth-child(3) { border-right: 1px solid oklch(38% 0.01 45 / 0.25); border-top: 1px solid oklch(38% 0.01 45 / 0.25); }
-  .counter-item:nth-child(4) { border-right: none; border-top: 1px solid oklch(38% 0.01 45 / 0.25); }
 
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .contact-form { padding: 2rem 1.5rem; }
@@ -1099,7 +1095,7 @@ footer {
   .portfolio-item:nth-child(1) { grid-column: span 2; }
 
   #hero { padding: 0 1.5rem 4rem; }
-  #about, #services, #reference, #faq, #join, #contact { padding: var(--sp-lg) 1.5rem; }
+  #about, #counters-section, #services, #reference, #faq, #join, #contact { padding: var(--sp-lg) 1.5rem; }
   footer { padding: 2.5rem 1.5rem 1.5rem; }
 }
 
