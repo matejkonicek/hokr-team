@@ -602,7 +602,7 @@ section { position: relative; z-index: 2; }
   border-radius: var(--radius-md);
 }
 
-.portfolio-item:nth-child(1) { grid-column: span 4; }
+.portfolio-item:nth-child(1) { grid-column: span 8; }
 .portfolio-item:nth-child(2) { grid-column: span 4; }
 .portfolio-item:nth-child(3) { grid-column: span 4; }
 .portfolio-item:nth-child(4) { grid-column: span 4; }
