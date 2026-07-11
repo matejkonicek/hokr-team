@@ -135,22 +135,3 @@
 
   tick();
 })();
-
-/* ── PORTFOLIO HOVER TILT ────────────────────────────────── */
-(function initTilt() {
-  if (window.matchMedia('(max-width: 768px)').matches) return;
-
-  document.querySelectorAll('.portfolio-item').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y = (e.clientY - rect.top)  / rect.height - 0.5;
-      card.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 4}deg) scale(1.02)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) scale(1)';
-      card.style.transition = 'transform 400ms cubic-bezier(0.23,1,0.32,1)';
-      setTimeout(() => { card.style.transition = ''; }, 400);
-    });
-  });
-})();
