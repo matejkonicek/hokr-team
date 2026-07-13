@@ -257,6 +257,7 @@ section { position: relative; z-index: 2; }
 .btn-outline:hover {
   border-color: var(--red);
   transform: translateY(-2px);
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.25) ;
 }
 
 .btn-ghost {
@@ -530,7 +531,6 @@ section { position: relative; z-index: 2; }
   content: '';
   position: absolute;
   inset: 0;
-  border: 1px solid var(--red);
   opacity: 0;
   transition: opacity 300ms var(--ease-out);
   pointer-events: none;
@@ -691,6 +691,7 @@ section { position: relative; z-index: 2; }
 .accordion-item:has(.accordion-trigger.open) {
   background-color: var(--black-glass);
   background-image: none;
+  box-shadow: 0 0 1000px rgba(255, 255, 255, 0.25) ;
 }
 
 .accordion-trigger {
