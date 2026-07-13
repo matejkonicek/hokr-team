@@ -511,6 +511,7 @@ section { position: relative; z-index: 2; }
   grid-template-columns: repeat(3, 1fr);
   border-radius: var(--radius-md);
   overflow: hidden;
+  padding: 1.5rem;
 }
 
 .service-card {
